@@ -514,5 +514,125 @@
 
     
 ?>
+
+
+
+
+
+
+
+<?php 
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo 'lesson 3 ';
+    echo '<br>';
+    echo 'Задача 1: целое число вывести в шестизначном формате.'; 
+    echo '<br>';
+    $number = 46;
+    echo printf("Ваш номер %06d", $number);
+
+    
+    
+?>
+
+<?php 
+    echo '<br>';
+    echo 'lesson 3 ';
+    echo '<br>';
+    echo 'Задача 2: секунды в формат времени.'; 
+    echo '<br>';
+    $second = 7638;
+    $h = intdiv($second,3600);
+    $mall = $second-($h*3600);
+    $m = intdiv($mall,60);
+    $s = $second-($h*3600)-($m*60);
+    printf("%02d:%02d:%02d", $h,$m,$s);
+
+    
+    
+?>
+
+<?php 
+    echo '<br>';
+    echo 'lesson 3 ';
+    echo '<br>';
+    echo 'Задача 2: есть фио полное надо сделать вывод фамилия и инициалы.'; 
+    echo '<br>';
+    $f = "Иванов ";
+    $i = "Иван";
+    $o = "Иванович";
+    echo $f,  mb_substr ($i,0,1), "."; 
+    echo mb_substr ($o,0,1), "."; 
+   
+    
+    
+?>
+
+<?php 
+    echo '<br>';
+    echo 'lesson 3 ';
+    echo '<br>';
+    echo 'Задача 3: есть пароль, определить его длину, если меньше 8 вывести предупреждение.'; 
+    echo '<br>';
+    $password = "Qwerty 1234";
+    $lenght = mb_strlen ($password);
+    if ($lenght<8 || (mb_strstr($password, " ")!==false)) {
+        echo "Пароль слишком короткий или внутри пробел";
+    }
+    
+    else echo "все ок";
+
+   
+    
+    
+?>
+
+<?php 
+    echo '<br>';
+    echo 'lesson 3 ';
+    echo '<br>';
+    echo 'Задача 3: совпадает ли количество букв.'; 
+    echo '<br>';
+    $a = "Это первая фраза";
+    $b = "Это первая фраза";
+    if (mb_strlen ($a) === mb_strlen ($b)) {
+        echo "Фразы одинаковой длины";
+    }
+    
+    else echo "фразы разной длины";
+
+   
+    
+    
+?>
+<?php 
+    echo '<br>';
+    echo 'lesson 3 ';
+    echo '<br>';
+    echo 'Задача 4: обрезать текст до 5.'; 
+    echo '<br>';
+    $a = "Это первая фраза";
+    
+    if (mb_strlen ($a) >10 ) {
+        echo mb_substr ($a,0,5); echo "... <a href=\"#\">Подробнее </a>" ;
+    }
+  
+?>
+
+<?php 
+    echo '<br>';
+    echo 'lesson 3 ';
+    echo '<br>';
+    echo 'Задача 5: сокращение слова.'; 
+    echo '<br>';
+    $a = "Обороноспособность";
+    
+    if (mb_strlen ($a) >7 ) {
+        echo mb_substr ($a,0,4); echo "-"; echo mb_substr ($a,-2); 
+    }
+    else echo $a;
+  
+?>
 </body>
 </html>
