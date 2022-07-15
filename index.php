@@ -142,5 +142,265 @@
         echo "Ответ: всего поместится". $num . "квадратов со сторой" . $k ;
     ?>;
     
+
+    <?php 
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
+        echo 'lesson4';
+        echo 'кол-во слов в предложении';
+        echo '<br>';
+        $str = "Оригинальный пример строки";
+        $str1 = explode(" ",$str);
+        echo '<br>';
+        echo "в строке "; echo count ($str1); echo "слова ";
+    ?>;
+
+<?php 
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
+        echo 'lesson4';
+        echo 'сортировка по убыванию';
+        echo '<br>';
+        $rate = [
+            'Вася'=>37,
+            'Даша'=>56,
+            'Катя'=>12,
+        ];
+        print_r ($rate);
+        echo '<br>';
+        arsort($rate);
+        print_r ($rate);
+    ?>
+
+    <?php 
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
+        echo 'lesson4';
+        echo '<br>';
+        echo 'поиск данных';
+        echo '<br>';
+        $arr = [
+            1=>'Вася',
+            5=>'Петя',
+            6=>'Коля',
+        ];
+        $id = 1;
+       if (isset($arr[$id])) {
+        echo $arr[$id];
+       }
+       else 
+       echo 'таких данных не существует';
+    ?>
+
+
+<?php 
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
+        echo 'lesson4';
+        echo '<br>';
+        echo 'поиск данных';
+        echo '<br>';
+        $arr = [
+            'яблоко'=>'это фрукт',
+            'клубника'=>'это ягода',
+            'картофель'=>'это овощь',
+        ];
+        $id = 'яблоко';
+       if (isset($arr[$id])) {
+        $b = $arr[$id];
+        echo $id;
+        echo ' - ';
+        echo $b;
+       }
+       else 
+       echo 'таких данных не существует';
+    ?>
+
+
+<?php 
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
+        echo 'lesson4';
+        echo '<br>';
+    $name="Данила";
+    $rate=[
+    "Вася"=>37,
+    "Петя"=>100,
+    "Маша"=>90,
+    "Данила"=>56,
+    "Саша"=>80,
+    ];
+    if(isset($rate[$name])){
+    if($rate[$name]<=30){
+        echo "Статус: новичок";
+    }
+    elseif($rate[$name]>30 &&$rate[$name]<=60){
+        echo "Статус: мастер";
+    }
+    elseif($rate[$name]>=61){
+        echo "Статус: грандмастер";
+    }
+    }else{
+    echo 'Пользователь не найден';
+    }
+    ?>
+
+    
+<?php 
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
+        echo 'lesson4';
+        echo '<br>';
+    $name="Игорь";
+    $rate=[
+    "Вася"=>37,
+    "Петя"=>13,
+    "Маша"=>56,
+    "Данила"=>56,
+    ];
+    if(isset($rate[$name])){
+            $rate[$name]++;
+        
+    }else{
+            $rate[$name]=0;
+            
+    }
+    print_r($rate);
+?>
+
+<?php 
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
+        echo 'lesson4';
+        echo '<br>';
+    $name="Вася";
+    $rate=[
+    "Вася"=>-37,
+    "Петя"=>13,
+    "Маша"=>56,
+    "Данила"=>56,
+    ];
+    if(isset($rate[$name])){
+            if ($rate[$name]<0) {
+                unset($rate[$name]);
+            }
+        
+    }else {
+            echo "данных нет";
+            
+    }
+    print_r($rate);
+?>
+
+
+<?php 
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
+        echo 'lesson4';
+        echo '<br>';
+        echo 'дано название папки написать по частям папку и файл';
+     $path='C:\\windows\\file.exe';
+     $path1 = explode('\\',$path);
+     print_r($path1);
+
+?>
+
+<?php 
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
+        echo 'lesson4';
+        echo '<br>';
+        echo 'homework4';
+        echo 'Лето. Дано название месяца, определить время года. Для хранения данных использовать массив.';
+        echo '<br>';
+     $name = 'february';
+     $year  = [
+        "january"=> "winter", 
+        "february"=>"winter", 
+        "december"=>"winter",
+        "march"=>"spring",
+        "april"=>"spring",
+        "may"=>"spring",
+        "june"=>"summer",
+        "july"=>"summer",
+        "August"=>"summer",
+        "september"=>"autumn",
+        "october"=>"autumn",
+        "november"=>"autumn"
+    ];
+    
+     if (isset($year[$name])) {
+        if ($year[$name]=="winter") {
+            echo $name. " это зима";
+        }
+        elseif ($year[$name]=="spring") {
+            echo $name. " это весна";
+        }
+        elseif ($year[$name]=="summer") {
+            echo $name. " это лето";
+        }
+        elseif ($year[$name]=="autumn") {
+            echo $name. " это осень";
+        }
+
+    }
+    
+    else echo "неверные данные";
+?>
+<?php 
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
+        echo 'lesson4';
+        echo '<br>';
+        echo 'homework4 ';
+        echo 'День недели. Заменить в тексте все английские названия дней недели на русские. Использовать str_replace вместе с массивами.';
+        echo '<br>';
+     $days=["понедельник","вторник","среда","четверг","пятница","суббота","воскресенье"];
+     $englishdays= ["monday", "tuesday", "wednesday", "thursday", "friday","saturday","sunday"];
+     print_r(str_replace($englishdays,$days,'это был прекрасный monday, мы пошли гулять, а в friday мы пошли в парк'));
+     
+?>
+
+<?php 
+        echo '<br>';
+        echo '<br>';
+        echo '<br>';
+        echo 'lesson4';
+        echo '<br>';
+        echo 'homework4 ';
+        echo 'Корзина. Получить стоимость товара в корзине, по его id';
+        echo '<br>';
+        $id= 2;
+        $price = 'price';
+        $card = [ 
+            13 => ['name'=>'Кеды', 'count'=>2, 'price'=>123], 
+            28 => ['name'=>'Самолет', 'count'=>1, 'price'=>9999999] 
+        ];
+        if (isset($card[$id])) {
+            echo "стоимость ";
+            print_r($card[$id]['name']);
+            echo " - ";
+            print_r($card[$id][$price]);
+        }
+        
+            else 
+            echo "нет данных";
+
+     
+     
+?>
+
+
+ 
 </body>
 </html>
