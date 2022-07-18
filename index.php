@@ -400,7 +400,137 @@
      
 ?>
 
+<?php 
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo 'lesson5';
+    echo '<br>';
+    
+?>
+<table>
+   
+<?php 
+    $a = 0;
+    $b = 1;
+    $h = 0.2;
+    for  ($x=$a;$x<=$b;$x+=$h):
+        $f=$x*$x-sin($x); ?>
+        <tr>
+            <td><?=$x?></td>
+            <td><?=$f?></td>
+        </tr>
 
+     
+<?php endfor;
+    
+?>
+</table>
+
+
+<?php 
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo 'вывести текст k раз';
+    echo '<br>';
+
+    $k=5;
+    $str='привет';
+    $x=0;
+    while ($x<$k) {
+        echo $str;
+        echo '<br>';
+        $x++;
+    }
+    
+?>
+
+<?php 
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo 'вывести абзацы';
+    echo '<br>';
+
+    
+    for ($x=1;$x<=$k;$x++){
+        echo "<p> Абзац $x </p>";
+    }
+    
+?>
  
+
+<?php 
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo 'задача про выигрыш';
+    echo '<br>';
+
+    $A=1000;
+    $B=100;
+    if ($A>=$B){
+        for ($x=0;$A>=$B;$A=$A/2){
+            $x++;
+        }
+        echo "через $x дней";
+
+    }
+    else echo 0;
+    
+?>
+
+<?php 
+    echo '<br>';
+    echo '<br>';
+    echo '<br>';
+    echo 'вывести таблицу рейтинг';
+    echo '<br>';
+    
+?>
+<?php 
+  $rate=[
+    "Вася"=>37,
+    "Петя"=>13,
+    "Маша"=>56,
+    "Данила"=>56,
+    "Маша"=>0,
+    ];  
+    arsort($rate);
+    $s=0;
+    $sum=array_sum($rate);
+?>
+<table>
+    <thead>
+        <tr>
+            <th>Имя </th>
+            <th>Рейтинг</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php 
+        foreach ($rate as $name => $value):?>
+        <tr>
+            <td><?=$name?></td>
+            <td><?=$value?></td>
+        </tr>
+        
+        <?php endforeach ?>
+    </tbody>
+</table>
+<table>
+    <tr>
+    <td> "общий рейтинг"</td>
+        <td><?= $sum?></td>
+        
+    </tr>
+    <td> "средний рейтинг"</td>
+        
+        <td> <?= $sum/count($rate)?></td>
+    </tr>
+</table>
+
+
 </body>
 </html>
